@@ -17,7 +17,7 @@ Plug 'bluz71/vim-nightfly-colors', { 'as': 'nightfly' }
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 " Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
 Plug 'junegunn/vim-easy-align'
-
+Plug 'jiangmiao/auto-pairs'
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 
@@ -28,6 +28,7 @@ Plug 'https://github.com/junegunn/vim-github-dashboard.git'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 
+Plug 'Yggdroot/indentLine'
 " Using a non-default branch
 " Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 
@@ -68,10 +69,14 @@ autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+" nnoremap <C-f> :NERDTreeFind<CR>
 
 colorscheme nightfly
 
+set list lcs=tab:\|\ 
+let g:indentLine_setColors = 0
+let g:indentLine_color_term = 239
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 
 let g:indentLine_enabled = 1
 let g:indent_guides_guide_size            = 1  " 指定对齐线的尺寸
